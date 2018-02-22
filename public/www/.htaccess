@@ -1,0 +1,25 @@
+#--------------------------------------------------
+# Répertoire : /
+#--------------------------------------------------
+
+# Le serveur doit suivre les liens symboliques :
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+#--------------------------------------------------
+# Règles de réécriture d'URL :
+#--------------------------------------------------
+
+# ROUTES PUBLIQUES --------------------------------
+
+    # ROUTE PAR DEFAUT :
+        # PATTERN : /
+        # Liste des posts
+        # RewriteRule ^(.*)$ index.php [L]
+
+# --------------------------------------------------
+
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+RewriteRule ^(.*)$ index.php [L]
